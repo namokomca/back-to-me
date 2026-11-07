@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "buildCommand": "pnpm build",
+  "outputDirectory": "build",
+  "functions": {"api/coach.js": {"maxDuration": 60}, "api/mcp.js": {"maxDuration": 30}}
+}
