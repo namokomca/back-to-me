@@ -1,4 +1,4 @@
-# 다시, 내 자리
+# 복직 온보딩
 
 육아휴직을 마치고 돌아오는 부모와 배우자가 복직 준비, 등하원 분담, 직무 AI 연습을 함께 기록하는 모바일 웹앱입니다.
 
@@ -43,4 +43,5 @@ pnpm start
 React, Vite, Tailwind CSS, Node.js, OpenAI Responses API. 외부 UI 컴포넌트 라이브러리는 사용하지 않습니다.
 
 OBA WEEKENDTHON 2026 프로토타입. 아직 별도 스폰서 API는 통합하지 않았습니다.
+
 
