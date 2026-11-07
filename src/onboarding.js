@@ -10,10 +10,10 @@ export function questionError(step,p){
  if(step==='dates'&&((p.who!=='배우자'&&!validDate(p.date))||(p.who!=='나'&&!validDate(p.partnerDate))))return '복직 날짜를 적어주세요. 이미 복직한 날짜도 괜찮아요.';
  if(step==='child'&&!p.childName.trim())return '아이 이름이나 애칭을 적어주세요.';
  if(step==='birthday'){const m=ageMonths(p.birthday,koreanToday());if(m===null||m<0||m>216)return '아이 생일을 확인해주세요. 미래 날짜는 적을 수 없어요.';}
- if(step==='enrolled'&&typeof p.enrolled!=='boolean')return '지금 기관을 이용하는지 골라주세요.';
- if(step==='school'&&!p.schoolName.trim())return '기관 이름을 적어주세요. 예정인 기관도 괜찮아요.';
+ if(step==='enrolled'&&typeof p.enrolled!=='boolean')return '지금 어린이집을 이용하는지 골라주세요.';
+ if(step==='school'&&!p.schoolName.trim())return '어린이집 이름을 적어주세요. 다닐 예정인 어린이집도 괜찮아요.';
  if(step==='caretime'&&(!time(p.drop)||!time(p.pickup)||p.drop>=p.pickup||!num(p.handoff,60)))return '등원은 하원보다 이르게, 인계 시간은 0~60분으로 적어주세요.';
- if(step==='home'&&p.enrolled&&!num(p.homeMinutes,240))return '집에서 기관까지 걸리는 시간을 0~240분으로 적어주세요.';
+ if(step==='home'&&p.enrolled&&!num(p.homeMinutes,240))return '집에서 어린이집까지 걸리는 시간을 0~240분으로 적어주세요.';
  for(const side of ['mine','partner']){
   const a=p[side];
   if(step===side+'Work'&&(!time(a.start)||!time(a.end)||a.start>=a.end))return '출근과 퇴근 시간을 확인해주세요. 야간근무 계산은 아직 준비 중이에요.';
