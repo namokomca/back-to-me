@@ -2,3 +2,4 @@
 
 .life-vooy-shortcut{width:100%;text-align:left;padding:16px 18px;border:1px solid var(--line);border-radius:14px;background:var(--paper);font-size:14px;font-weight:600;color:var(--stamp)}.life-vooy-shortcut span{display:block;font-size:11px;font-weight:400;color:var(--ink-soft);margin-top:4px}#vooy-summary{scroll-margin-top:24px}
 
+.vooy-scenarios{display:grid;gap:9px;margin:20px 0}.vooy-scenarios button{text-align:left;border:1px solid #CCD7C2;background:var(--paper);border-radius:12px;padding:14px;min-height:70px}.vooy-scenarios strong{display:block;font-size:13px}.vooy-scenarios span{display:block;font-size:11px;line-height:1.7;color:var(--ink-soft);margin-top:4px}.vooy-scenarios button[aria-pressed=true]{outline:2px solid var(--stamp);outline-offset:-2px;background:#F6FAF1}.vooy-request{padding:1px 0 15px}.vooy-request textarea{font-size:13px;min-height:110px}
