@@ -1,0 +1,23 @@
+{
+  "name": "return-notebook",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.25.0",
+  "scripts": {
+    "dev": "node dev.mjs",
+    "build": "vite build",
+    "start": "node server.mjs",
+    "test": "node coach-check.mjs"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "vite": "^7.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "tailwindcss": "^4.1.0",
+    "@tailwindcss/vite": "^4.1.0"
+  }
+}
