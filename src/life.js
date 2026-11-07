@@ -8,7 +8,7 @@ export const lifeTemplates = [
 ];
 export function suggestDivision(tasks,mineMinutes,partnerMinutes){
  const remaining={나:Math.max(0,mineMinutes),배우자:Math.max(0,partnerMinutes)};
- for(const t of tasks){if(!t.done&&['나','배우자'].includes(t.owner))remaining[t.owner]-=t.minutes;}
+ for(const t of tasks){if(t.done)continue;if(['나','배우자'].includes(t.owner))remaining[t.owner]-=t.minutes;if(t.owner==='함께'){remaining.나-=t.minutes;remaining.배우자-=t.minutes;}}
  const result=tasks.map(t=>({...t}));
  const pending=result.filter(t=>!t.done&&t.owner==='미정').sort((a,b)=>b.minutes-a.minutes);
  for(const t of pending){
@@ -18,5 +18,5 @@ export function suggestDivision(tasks,mineMinutes,partnerMinutes){
  }
  return result;
 }
-export function lifeSummary(tasks){const open=tasks.filter(t=>!t.done);return {open:open.length,unassigned:open.filter(t=>t.owner==='미정').length,mine:open.filter(t=>t.owner==='나').reduce((n,t)=>n+t.minutes,0),partner:open.filter(t=>t.owner==='배우자').reduce((n,t)=>n+t.minutes,0)};}
+export function lifeSummary(tasks){const open=tasks.filter(t=>!t.done);return {open:open.length,unassigned:open.filter(t=>t.owner==='미정').length,mine:open.filter(t=>['나','함께'].includes(t.owner)).reduce((n,t)=>n+t.minutes,0),partner:open.filter(t=>['배우자','함께'].includes(t.owner)).reduce((n,t)=>n+t.minutes,0)};}
 
